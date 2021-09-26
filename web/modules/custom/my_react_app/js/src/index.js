@@ -1,32 +1,56 @@
 import React, { useState } from 'react';
 import { render } from 'react-dom';
-import styled from 'styled-components'
+import styled from 'styled-components';
+//import FilterWrapper from './components/FilterWrapper/FilterWrapper';
 
+const App = styled.div`
+  background: white;
+`
+const FilterWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+`
+const CountryFilter = styled.select`
+  width: 180px;
+  height: 20px;
+  margin-top: 2px;
+`
+const AvailabilityFilter = styled.input`
+  padding: 20px;
+`
 const HotelCard = styled.div`
   background: #f4f4f4;
   margin: 2px;
   overflow: hidden;
   position: relative;
 `
-const Container = styled.div`
+const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
-`/**/
+`
 const TopRow = styled.div`
-  
-`/* display: flex;
-  flex-direction: column;
-  self-align: flex-start; */
+  margin-left: 5px;
+  margin-right: auto;
+  margin-top: 10px;
+  margin-bottom: auto;
+`
 const BottomRow = styled.div`
-  
-`/* display: flex;
-  flex-direction: column;
-  self-align: flex-end;*/
+  position: absolute;
+  top: 60%;
+  margin-left: 5px;
+  margin-right: auto;
+  margin-bottom: 5px;
+`
 const HotelImage = styled.img` 
   width: 150px;
   height: 150px;
   margin: 10px;
   margin-top: 10px;
+  float: left;
+  @media only screen and (max-width: 450px) {
+    width: 100px;
+    height: 100px;
+}
 `
 const Price = styled.div`
   color: green;
@@ -37,22 +61,24 @@ const Price = styled.div`
   position: absolute;
   top: 0px;
   right: 0px;
-`/*text-align: right;float: right;*/
+`
 const HotelName = styled.div`
   font-size: 14px;
+  padding: 0px;
 `
 const HotelLocation = styled.div`
   font-size: 12px;
+
+  
+`
+const HotelAvailability = styled.div`
+  font-size: 12px;
+
+  
 `
 const HotelSwimmingpool = styled.div`
   font-size: 12px;
 `
-const HotelAvailability = styled.div`
-  font-size: 12px;
-`
-/*margin: 1 1em;
-  padding: 0.25em 1em;*/
-//import '../../css/my-react-app.css'
 const Root = () => {
  
   const [ newFilter, setFilter ] = useState('')
@@ -88,8 +114,6 @@ const Root = () => {
   const [ showAll, setShowAll] = useState(true)
   const [ filterByAvailability, setFilterByAvailability] = useState(false)
 
-  
-  
   const handleFilterChange = (country) => {
 		setFilter(country)
 		if (country !== ''){
@@ -106,40 +130,43 @@ const Root = () => {
   : hotelsByAvailability.filter(hotel => hotel.country.toLowerCase().indexOf(newFilter.toLowerCase()) !== -1)
 
   return (
-    <div>
-      <label htmlFor="hotels">Filter by country</label>
-      <select name="hotels" id="hotels" onChange={e => handleFilterChange(e.target.value)}>
-        <option value=""></option>
-        <option value="Finland">Finland</option>
-        <option value="Spain">Spain</option>
-        <option value="Netherlands">Netherlands</option>
-      </select>
-      <input type="checkbox" id="isAvailable" name="isAvailable" onChange={() => setFilterByAvailability(!filterByAvailability)}/>
+    <App>
+      <FilterWrapper>
+        <label htmlFor="hotels">Filter by country</label>
+        <CountryFilter name="hotels" id="hotels" onChange={e => handleFilterChange(e.target.value)}>
+          <option value=""></option>
+          <option value="Finland">Finland</option>
+          <option value="Spain">Spain</option>
+          <option value="Netherlands">Netherlands</option>
+        </CountryFilter>
+      </FilterWrapper>
+      <span><AvailabilityFilter type="checkbox" id="isAvailable" name="isAvailable" onChange={() => setFilterByAvailability(!filterByAvailability)}/></span>
       <label htmlFor="isAvailable"> Is available</label>
-
       {hotelsToShow && hotelsToShow.map((hotel, index) => {
         return (
           <HotelCard key={index}>
-            <div><HotelImage src={hotel.imageUrl} width="200px" height="200px" alt={`${hotel.name}`}></HotelImage></div>
               <div>
-                <TopRow>
-                  <div>
-                    <HotelName>{hotel.name}</HotelName>
-                    <HotelLocation>{hotel.city}, {hotel.country}</HotelLocation>
-                  </div>
-                </TopRow>
-                <BottomRow>
+                <div><HotelImage src={hotel.imageUrl} width="200px" height="200px" alt={`${hotel.name}`}></HotelImage></div>
+                <Wrapper>
+                  <TopRow>
                     <div>
-                      <HotelAvailability>Available: {hotel.isAvailable ? 'Yes' : 'No'}</HotelAvailability>
-                      <HotelSwimmingpool>Swimming pool: {hotel.hasSwimmingPool ? 'Yes' : 'No'}</HotelSwimmingpool>
+                      <HotelName>{hotel.name}</HotelName>
+                      <HotelLocation>{hotel.city}, {hotel.country}</HotelLocation>
                     </div>
-                </BottomRow>
+                  </TopRow>
+                  <BottomRow>
+                      <div>
+                        <HotelAvailability>Available: {hotel.isAvailable ? 'Yes' : 'No'}</HotelAvailability>
+                        <HotelSwimmingpool>Swimming pool: {hotel.hasSwimmingPool ? 'Yes' : 'No'}</HotelSwimmingpool>
+                      </div>
+                  </BottomRow>
+                </Wrapper>
                 <Price>{hotel.price} {hotel.currency === 'euro' ? '€' : hotel.currency}</Price>
               </div>
           </HotelCard>
         )
       })}
-    </div>
+    </App>
   )
 }
 

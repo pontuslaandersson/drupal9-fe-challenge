@@ -23,6 +23,7 @@ position: absolute;
 top: 60%;
 margin-left: 5px;
 margin-right: auto;
+margin-top: auto;
 margin-bottom: 20px;
 `
 const HotelImage = styled.img` 
@@ -55,9 +56,10 @@ right: 0px;
   font-size: 12px;
 }
 `
-const HotelName = styled.div`
+const HotelName = styled.h2`
 font-size: 14px;
-padding: 0px;
+font-weight: light;
+margin: 0px;
 @media only screen and (max-width: 450px) {
   font-size: 12px;
 }
@@ -67,6 +69,7 @@ padding: 0px;
 `
 const HotelLocation = styled.div`
 font-size: 12px;
+margin: 0px;
 @media only screen and (max-width: 450px) {
   font-size: 10px;
 }
@@ -76,6 +79,7 @@ font-size: 12px;
 `
 const HotelAvailability = styled.div`
 font-size: 12px;
+margin: 0px;
 @media only screen and (max-width: 450px) {
   font-size: 10px;
 }
@@ -85,6 +89,7 @@ font-size: 12px;
 `
 const HotelSwimmingpool = styled.div`
 font-size: 12px;
+margin: 0px;
 @media only screen and (max-width: 450px) {
   font-size: 10px;
 }
@@ -103,8 +108,9 @@ return (
                 <div><HotelImage src={hotel.imageUrl} width="200px" height="200px" alt={`${hotel.name}`}></HotelImage></div>
                 <Wrapper>
                   <TopRow>
-                    <div>
+                    
                       <HotelName>{hotel.name}</HotelName>
+                    <div>
                       <HotelLocation>{hotel.city}, {hotel.country}</HotelLocation>
                     </div>
                   </TopRow>

@@ -22,13 +22,6 @@ const CountryFilterLabel = styled.label`
 const AvailabilityFilterWrapper = styled.div`
   margin-top: 25px;
 `
-const AvailabilityFilter = styled.input`
-  margin-left: 5px;
-`
-const AvailabilityFilterLabel = styled.label`
-  
-`/* margin-left: 5px;*/
-
 
 const Filter = ( { handleFilterChange, setFilterByAvailability, filterByAvailability } ) => {
   return (
@@ -43,8 +36,8 @@ const Filter = ( { handleFilterChange, setFilterByAvailability, filterByAvailabi
         </CountryFilter>
       </CountryFilterWrapper>
       <AvailabilityFilterWrapper>
-        <AvailabilityFilter type="checkbox" id="isAvailable" name="isAvailable" onChange={() => setFilterByAvailability(!filterByAvailability)}/>
-        <AvailabilityFilterLabel htmlFor="isAvailable"> Is available</AvailabilityFilterLabel>
+        <input type="checkbox" id="isAvailable" name="isAvailable" onChange={() => setFilterByAvailability(!filterByAvailability)}/>
+        <label htmlFor="isAvailable"> Is available</label>
       </AvailabilityFilterWrapper>
       
     </BigFilterWrapper>

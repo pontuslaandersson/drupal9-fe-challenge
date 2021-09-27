@@ -51,54 +51,29 @@ const Price = styled.div`
   top: 0rem;
   right: 0rem;
   
-`/* @media only screen and (max-width: 450rem) {
-    font-size: 14rem;
-  }
-  @media only screen and (max-width: 320rem) {
-    font-size: 12rem;
-  }*/
+`
 const HotelName = styled.h2`
   font-size: 14rem;
   font-weight: light;
   margin: 0rem;
   
-`/*@media only screen and (max-width: 450rem) {
-    font-size: 12rem;
-  }
-  @media only screen and (max-width: 320rem) {
-    font-size: 10rem;
-  } */
+`
 const HotelLocation = styled.div`
   font-size: 12rem;
   margin: 0rem;
   
   }
-`/*@media only screen and (max-width: 450rem) {
-    font-size: 10rem;
-  }
-  @media only screen and (max-width: 320rem) {
-    font-size: 8rem;
-   } */
+`
 const HotelAvailability = styled.div`
   font-size: 12rem;
   margin: 0rem;
   
-`/*@media only screen and (max-width: 450rem) {
-    font-size: 10rem;
-  }
-  @media only screen and (max-width: 320rem) {
-    font-size: 8rem;
-  } */
+`
 const HotelSwimmingpool = styled.div`
   font-size: 12rem;
   margin: 0rem;
   
-`/*@media only screen and (max-width: 450rem) {
-    font-size: 10rem;
-  }
-  @media only screen and (max-width: 320rem) {
-    font-size: 8rem;
-  } */
+`
 
 const Hotels = ( { hotelsToShow } ) => {
 return (

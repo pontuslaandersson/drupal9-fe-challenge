@@ -7,6 +7,7 @@ import makeSameHelper from './utils/makeSameHelper'
 
 const App = styled.div`
   background: white;
+  padding: 10px;
 `
 
 const Root = () => {

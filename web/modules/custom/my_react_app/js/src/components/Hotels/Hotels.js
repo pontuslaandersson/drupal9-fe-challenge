@@ -109,7 +109,6 @@ return (
                 <div><HotelImage src={hotel.imageUrl} width="200px" height="200px" alt={`${hotel.name}`}></HotelImage></div>
                 <Wrapper>
                   <TopRow>
-                    
                       <HotelName>{hotel.name}</HotelName>
                     <div>
                       <HotelLocation>{hotel.city}, {hotel.country}</HotelLocation>

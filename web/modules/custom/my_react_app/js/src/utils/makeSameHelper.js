@@ -1,3 +1,8 @@
+/**
+ * Takes a JSON array in, and treats it so that country codes are replaced with countries.
+ * In this case, we only need to replace 'FI' with 'Finland', but it could be reworked to other countries and codes.
+ */
+
 const makeSame = (hotels) => {
   let returnArray = []
   for (let i in hotels) {
@@ -19,7 +24,7 @@ const makeSame = (hotels) => {
     }
     returnArray.push(currentHotel)
     }
-   return (returnArray)
+    return (returnArray)
   }
 
   const exp = { makeSame }

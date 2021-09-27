@@ -3,35 +3,35 @@ import styled from 'styled-components'
 
 const HotelCard = styled.div`
   background: #f4f4f4;
-  margin: 2px;
+  margin: 2rem;
   overflow: hidden;
   position: relative;
-  min-height: 60px;
-  max-width: 450px;
+  min-height: 60rem;
+  max-width: 450rem;
 `
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
 `
 const TopRow = styled.div`
-  margin-left: 5px;
+  margin-left: 5rem;
   margin-right: auto;
-  margin-top: 10px;
+  margin-top: 10rem;
   margin-bottom: auto;
 `
 const BottomRow = styled.div`
   position: absolute;
   top: 60%;
-  margin-left: 5px;
+  margin-left: 5rem;
   margin-right: auto;
   margin-top: auto;
-  margin-bottom: 20px;
+  margin-bottom: 20rem;
 `
 const HotelImage = styled.img` 
-  width: 150px;
-  height: 150px;
-  margin: 10px;
-  margin-top: 10px;
+  width: 150rem;
+  height: 150rem;
+  margin: 10rem;
+  margin-top: 10rem;
   float: left;
   @media only screen and (max-width: 450px) {
     width: 100px;
@@ -41,63 +41,64 @@ const HotelImage = styled.img`
     width: 90px;
     height: 90px;
   }
-`
+`/* */
 const Price = styled.div`
   color: green;
-  font-size: 16px;
-  margin-top: 5px;
-  padding: 10px;
+  font-size: 16rem;
+  margin-top: 5rem;
+  padding: 10rem;
   position: absolute;
-  top: 0px;
-  right: 0px;
-  @media only screen and (max-width: 450px) {
-    font-size: 14px;
+  top: 0rem;
+  right: 0rem;
+  
+`/* @media only screen and (max-width: 450rem) {
+    font-size: 14rem;
   }
-  @media only screen and (max-width: 320px) {
-    font-size: 12px;
-  }
-`
+  @media only screen and (max-width: 320rem) {
+    font-size: 12rem;
+  }*/
 const HotelName = styled.h2`
-  font-size: 14px;
+  font-size: 14rem;
   font-weight: light;
-  margin: 0px;
-  @media only screen and (max-width: 450px) {
-    font-size: 12px;
+  margin: 0rem;
+  
+`/*@media only screen and (max-width: 450rem) {
+    font-size: 12rem;
   }
-  @media only screen and (max-width: 320px) {
-    font-size: 10px;
-  }
-`
+  @media only screen and (max-width: 320rem) {
+    font-size: 10rem;
+  } */
 const HotelLocation = styled.div`
-  font-size: 12px;
-  margin: 0px;
-  @media only screen and (max-width: 450px) {
-    font-size: 10px;
+  font-size: 12rem;
+  margin: 0rem;
+  
   }
-  @media only screen and (max-width: 320px) {
-    font-size: 8px;
+`/*@media only screen and (max-width: 450rem) {
+    font-size: 10rem;
   }
-`
+  @media only screen and (max-width: 320rem) {
+    font-size: 8rem;
+   } */
 const HotelAvailability = styled.div`
-  font-size: 12px;
-  margin: 0px;
-  @media only screen and (max-width: 450px) {
-    font-size: 10px;
+  font-size: 12rem;
+  margin: 0rem;
+  
+`/*@media only screen and (max-width: 450rem) {
+    font-size: 10rem;
   }
-  @media only screen and (max-width: 320px) {
-    font-size: 8px;
-  }
-`
+  @media only screen and (max-width: 320rem) {
+    font-size: 8rem;
+  } */
 const HotelSwimmingpool = styled.div`
-  font-size: 12px;
-  margin: 0px;
-  @media only screen and (max-width: 450px) {
-    font-size: 10px;
+  font-size: 12rem;
+  margin: 0rem;
+  
+`/*@media only screen and (max-width: 450rem) {
+    font-size: 10rem;
   }
-  @media only screen and (max-width: 320px) {
-    font-size: 8px;
-  }
-`
+  @media only screen and (max-width: 320rem) {
+    font-size: 8rem;
+  } */
 
 const Hotels = ( { hotelsToShow } ) => {
 return (
@@ -106,7 +107,7 @@ return (
         return (
           <HotelCard key={index}>
               <div>
-                <div><HotelImage src={hotel.imageUrl} width="200px" height="200px" alt={`${hotel.name}`}></HotelImage></div>
+                <div><HotelImage src={hotel.imageUrl} width="200rem" height="200rem" alt={`${hotel.name}`}></HotelImage></div>
                 <Wrapper>
                   <TopRow>
                       <HotelName>{hotel.name}</HotelName>
@@ -131,4 +132,3 @@ return (
 }
 
 export default Hotels
-
